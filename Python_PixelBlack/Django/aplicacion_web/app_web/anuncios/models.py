@@ -12,7 +12,6 @@ class Anuncio(models.Model):
 
     titulo = models.CharField(max_length=150)
     texto = models.TextField()
-    image = models.ImageField(null=True,upload_to='images')
     created = models.DateTimeField(auto_now_add=True)
     estado = models.CharField(max_length=10,
                             choices=STATUS_CHOICES,

@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Shift">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -27,7 +27,7 @@
      <string>Shift</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="rad_gra">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -40,7 +40,7 @@
      <string>rad/º ' ''</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="exp">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -53,7 +53,7 @@
      <string>e</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="borrar">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -66,7 +66,7 @@
      <string>&lt;--</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="pi">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -79,7 +79,7 @@
      <string>π</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="paren1">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -92,7 +92,7 @@
      <string>(</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="raiz_cuadrada">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -105,7 +105,7 @@
      <string>sqrt</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="paren2">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -118,7 +118,7 @@
      <string>)</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="neperiano">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -128,10 +128,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>log</string>
+     <string>Ln</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="potencia">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -145,11 +145,14 @@
       <strikeout>false</strikeout>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;X&lt;span style=&quot; vertical-align:super;&quot;&gt;Y&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="text">
-     <string>xy</string>
+     <string>X^Y</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_11">
+   <widget class="QPushButton" name="seis">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -165,7 +168,7 @@
      <string>6</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_12">
+   <widget class="QPushButton" name="CE">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -178,7 +181,7 @@
      <string>CE</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_13">
+   <widget class="QPushButton" name="siete">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -194,7 +197,7 @@
      <string>7</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_14">
+   <widget class="QPushButton" name="C">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -211,7 +214,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>C</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_15">
+   <widget class="QPushButton" name="ocho">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -227,7 +230,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>8</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_16">
+   <widget class="QPushButton" name="nueve">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -243,7 +246,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>9</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_17">
+   <widget class="QPushButton" name="cinco">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -259,7 +262,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>5</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_18">
+   <widget class="QPushButton" name="division">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -272,10 +275,10 @@ background-color: rgb(0, 0, 0);</string>
      <string notr="true">background-color: rgb(182, 255, 174);</string>
     </property>
     <property name="text">
-     <string>+</string>
+     <string>/</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_19">
+   <widget class="QPushButton" name="cuatro">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -291,7 +294,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>4</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_20">
+   <widget class="QPushButton" name="multiplicacion">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -304,10 +307,10 @@ background-color: rgb(0, 0, 0);</string>
      <string notr="true">background-color: rgb(182, 255, 174);</string>
     </property>
     <property name="text">
-     <string>-</string>
+     <string>x</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_21">
+   <widget class="QPushButton" name="suma">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -320,10 +323,10 @@ background-color: rgb(0, 0, 0);</string>
      <string notr="true">background-color: rgb(182, 255, 174);</string>
     </property>
     <property name="text">
-     <string>/</string>
+     <string>+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_22">
+   <widget class="QPushButton" name="cero">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -339,7 +342,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_23">
+   <widget class="QPushButton" name="coma">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -352,7 +355,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_24">
+   <widget class="QPushButton" name="dos">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -368,7 +371,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_25">
+   <widget class="QPushButton" name="abs">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -381,7 +384,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>IxI</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_26">
+   <widget class="QPushButton" name="resta">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -394,10 +397,10 @@ background-color: rgb(0, 0, 0);</string>
      <string notr="true">background-color: rgb(182, 255, 174);</string>
     </property>
     <property name="text">
-     <string>x</string>
+     <string>-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_27">
+   <widget class="QPushButton" name="igual">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -413,7 +416,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>=</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_28">
+   <widget class="QPushButton" name="inversa">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -426,7 +429,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>1/x</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_29">
+   <widget class="QPushButton" name="uno">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -442,7 +445,7 @@ background-color: rgb(0, 0, 0);</string>
      <string>1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_30">
+   <widget class="QPushButton" name="tres">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -458,14 +461,19 @@ background-color: rgb(0, 0, 0);</string>
      <string>3</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="valores">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
       <width>491</width>
-      <height>192</height>
+      <height>201</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
    </widget>
   </widget>

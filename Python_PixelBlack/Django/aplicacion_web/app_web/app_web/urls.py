@@ -18,10 +18,11 @@ from django.urls import path, include
 from anuncios import views
 from django.conf import settings
 from django.conf.urls.static import static
-app_name = 'anuncios'
+#app_name = 'anuncios'
 urlpatterns = [
 path('admin/', admin.site.urls),
 path('', views.anuncios_list, name='anuncios_list'),
+path('email/',include('sendemail.urls')),
 ]
 if settings.DEBUG:
     from django.conf.urls.static import static

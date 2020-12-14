@@ -66,7 +66,7 @@ fclose(fid);
 PM={pelamis,seapower,wavestar,oceantec,ppc,energy_buoy,ceto,seabed,oyster_energy};
 maximo=zeros(1,9);
 for i=1:9
-    aux=max(max(PM{i})); %obtenemos la potencia máxima que puede generar cada aparato
+    aux=max(max(PM{i})); %obtenemos la potencia mï¿½xima que puede generar cada aparato
     maximo(1,i)=aux;
 end
 clear aux
@@ -79,7 +79,7 @@ for i=1:9
     f_fin=aux(end,1);
     limites=[limites;c_ini,c_fin,f_ini,f_fin];
 end
-% aquí empiezo a cargar los datos de los puntos SIMAR
+% aquï¿½ empiezo a cargar los datos de los puntos SIMAR
 documentos=dir('D:\Dani\Puertos\txt');
 documentos(1:2)=[];
 for k=1:length(documentos)
@@ -124,7 +124,7 @@ for k=1:length(documentos)
     end
     cabT=[0:0.5:Tmax];
     cabH=[0.5:0.5:Hsmax];
-    cabH=cabH';
+    cabH=cabH;
     TC=[cabH,TC];
     TC=[cabT;TC];
     clear a
@@ -137,10 +137,10 @@ for k=1:length(documentos)
     fprintf(fid,A,TC);
     fclose(fid);
 
-    %Empiezo a convertir la TC en matriz más pequeñas para
+    %Empiezo a convertir la TC en matriz mï¿½s pequeï¿½as para
     %multiplicarla por las matrices de potencia
 
-    %Si la matriz de potencia tiene valores que la climatológica no, estos
+    %Si la matriz de potencia tiene valores que la climatolï¿½gica no, estos
     %deben eliminarse.
 
     if   TC(1,end)<limites(:,2)
@@ -150,7 +150,7 @@ for k=1:length(documentos)
        limites(:,4)=TC(end,1);
     end
 
-    %conversión TC a matrices climatológicas NxM que abarque mi matriz de potencia
+    %conversiï¿½n TC a matrices climatolï¿½gicas NxM que abarque mi matriz de potencia
 %%
     Mposicion=zeros(9,4);
     for i=1:9
@@ -186,7 +186,7 @@ for k=1:length(documentos)
        clear posicion
     end
 
-    %Esto se pone aquí para corregir un error en la posición de las columnas
+    %Esto se pone aquï¿½ para corregir un error en la posiciï¿½n de las columnas
 
     Mpos=[Mposicion(:,3),Mposicion(:,4),Mposicion(:,1),Mposicion(:,2),];
     Mposicion=Mpos;
@@ -203,7 +203,7 @@ for k=1:length(documentos)
     Moyster_energy=TC(Mposicion(9,1):Mposicion(9,2),Mposicion(9,3):Mposicion(9,4));
     Mpotencias={Mpelamis,Mseapower,Mwavestar,Moceantec,Mppc,Menergy_buoy,Mceto,Mseabed,Moyster_energy};
 
-    %convierto la ultima fila para que sume los estados de la mar más potentes
+    %convierto la ultima fila para que sume los estados de la mar mï¿½s potentes
 
     Mpelamis(end,:)=sum(TC(Mposicion(1,2):end,Mposicion(1,3):Mposicion(1,4)));
     Mseapower(end,:)=sum(TC(Mposicion(2,2):end,Mposicion(2,3):Mposicion(2,4)));
@@ -223,7 +223,7 @@ for k=1:length(documentos)
        PM2{i}(:,1)=[];
              for j=3:4
                 while length(PM2{i}(:,1))~=length(Mpotencias{i}(:,1)); %para 
-                    %igualar los tamaños de las matrices añadiendo ceros
+                    %igualar los tamaï¿½os de las matrices aï¿½adiendo ceros
                     PM2{i}(end,:)=[];
                 end
           end

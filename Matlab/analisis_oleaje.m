@@ -83,9 +83,9 @@ end
 documentos=dir('D:\Dani\Puertos\txt');
 documentos(1:2)=[];
 for k=1:length(documentos)
-    fid=fopen(strcat('D:\Dani\Puertos\txt\',documentos(k).name),'r');
+    fid=fopen(strcat('D:\Dani\Puertos\txt\',documentos(k).name)','r');
     fgetl(fid);
-    fid=fopen(strcat('D:\Dani\Puertos\txt\',documentos(k).name),'r');
+    fid=fopen(strcat('D:\Dani\Puertos\txt\',documentos(k).name)','r');
     fgetl(fid);
     fgetl(fid);
     fgetl(fid);

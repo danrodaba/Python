@@ -137,10 +137,10 @@ for k=1:length(documentos)
     fprintf(fid,A,TC);
     fclose(fid);
 
-    %Empiezo a convertir la TC en matriz m�s peque�as para
+    %Empiezo a convertir la TC en matriz más pequeñas para
     %multiplicarla por las matrices de potencia
 
-    %Si la matriz de potencia tiene valores que la climatol�gica no, estos
+    %Si la matriz de potencia tiene valores que la climatológica no, estos
     %deben eliminarse.
 
     if   TC(1,end)<limites(:,2)

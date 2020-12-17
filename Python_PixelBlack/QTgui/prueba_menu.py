@@ -13,15 +13,29 @@ class Ventana(QMainWindow):
         self.define_menu()
 
     def define_menu(self):
+        self.action_Abrir.triggered.connect(self.menuAbrir)
+        self.actionGuardar.triggered.connect(self.menuGuardar)
+        self.actionImprimir.triggered.connect(self.menuImprimir)
+        self.actionTipo.triggered.connect(self.menuTipo)
+        self.actionLogitud.triggered.connect(self.menuLongitud)
+        self.actionSangrado.triggered.connect(self.menuSangrado)
 
-        #poner checkbox en las opciones
-        self.label = QLabel("El estado del checking es ")
-        self.label.setAlignment(Qt.AlignCenter)
-        
-        self.setCentralWidget(self.label)
-        
+
+    def menuAbrir(self):
+        print('Abrir')
+    def menuGuardar(self):
+        print('Guardar')
+    def menuImprimir(self):
+        print('Imprimir')
+    def menuTipo(self):
+        print('Tipo')
+    def menuLongitud(self):
+        print('Longitud')
+    def menuSangrado(self):
+        print('Sangrado')
+    
         toggleAction = QAction('Etiqueta con checking', self, checkable=True)
-        #toggleAction.setCheckable(False)      método para alterar el estado del Checking 
+        #toggleAction.setCheckable(False)      método para alterar el estado del Checking
         toggleAction.setStatusTip('Etiqueta con cheking')
         toggleAction.triggered.connect(self.etiqueta_checking)
 

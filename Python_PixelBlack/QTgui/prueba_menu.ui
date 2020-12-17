@@ -20,14 +20,14 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
     <property name="title">
      <string>Archivo</string>
     </property>
-    <widget class="QMenu" name="menuAbrir">
+    <widget class="QMenu" name="Qmenu_Abrir">
      <property name="title">
       <string>Abrir</string>
      </property>
@@ -36,9 +36,9 @@
      <addaction name="actionLogitud"/>
     </widget>
     <addaction name="separator"/>
-    <addaction name="menuAbrir"/>
+    <addaction name="Qmenu_Abrir"/>
     <addaction name="actionGuardar"/>
-    <addaction name="actionGuardar_como"/>
+    <addaction name="actionImprimir"/>
    </widget>
    <widget class="QMenu" name="menuEdici_n">
     <property name="title">
@@ -94,7 +94,7 @@
     <string>Ctrl+G</string>
    </property>
   </action>
-  <action name="actionGuardar_como">
+  <action name="actionImprimir">
    <property name="text">
     <string>Imprimir</string>
    </property>

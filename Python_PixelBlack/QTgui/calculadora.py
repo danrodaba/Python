@@ -4,15 +4,10 @@ from PyQt5.QtWidgets import *
 from math import pi, e, log
 
 class Ventana(QMainWindow):
-
-    #salida = ''
-    #valor1 = 0
-    #valor2 = 0
     
     def __init__(self):
         QMainWindow.__init__(self)
         uic.loadUi('calculadora.ui',self)
-        #self.potencia.setText('X\0x1d67') #Esto debería escribir un superíndice en ese botón
         self.resultado = ''
         self.operacion = ''
         self.valor1 = '0'

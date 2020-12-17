@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <widget class="QMenu" name="Qmenu_Abrir">
+     <property name="title">
+      <string>Abrir</string>
+     </property>
+     <addaction name="action_Abrir"/>
+     <addaction name="actionTipo"/>
+     <addaction name="actionLogitud"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="Qmenu_Abrir"/>
+    <addaction name="actionGuardar"/>
+    <addaction name="actionImprimir"/>
+   </widget>
+   <widget class="QMenu" name="menuEdici_n">
+    <property name="title">
+     <string>Edición</string>
+    </property>
+    <widget class="QMenu" name="menuFuente">
+     <property name="title">
+      <string>Fuente</string>
+     </property>
+     <addaction name="actionArial"/>
+     <addaction name="actionTimes_New_Roman"/>
+     <addaction name="actionCourier"/>
+    </widget>
+    <addaction name="actionSangrado"/>
+    <addaction name="menuFuente"/>
+    <addaction name="actionP_rrafo"/>
+   </widget>
+   <widget class="QMenu" name="menuVista">
+    <property name="title">
+     <string>Vista</string>
+    </property>
+    <addaction name="actionPantalla_completa"/>
+    <addaction name="actionMultiples_pantalla"/>
+    <addaction name="actionPantalla_extendida"/>
+    <addaction name="actionCami_n"/>
+   </widget>
+   <widget class="QMenu" name="menuInsertar">
+    <property name="title">
+     <string>Insertar</string>
+    </property>
+    <addaction name="actionIm_genes"/>
+    <addaction name="actionTexteo"/>
+    <addaction name="actionTexto_enriquecido"/>
+   </widget>
+   <widget class="QMenu" name="menuSalir">
+    <property name="title">
+     <string>Salir</string>
+    </property>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuEdici_n"/>
+   <addaction name="menuVista"/>
+   <addaction name="menuInsertar"/>
+   <addaction name="menuSalir"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionGuardar">
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionImprimir">
+   <property name="text">
+    <string>Imprimir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionC_llate">
+   <property name="text">
+    <string>Cállate</string>
+   </property>
+  </action>
+  <action name="action_Abrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionTipo">
+   <property name="text">
+    <string>Tipo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionLogitud">
+   <property name="text">
+    <string>Logitud</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionSangrado">
+   <property name="text">
+    <string>Sangrado</string>
+   </property>
+  </action>
+  <action name="actionP_rrafo">
+   <property name="text">
+    <string>Párrafo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionPantalla_completa">
+   <property name="text">
+    <string>Pantalla completa</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionMultiples_pantalla">
+   <property name="text">
+    <string>Multiples pantallas</string>
+   </property>
+  </action>
+  <action name="actionPantalla_extendida">
+   <property name="text">
+    <string>Pantalla extendida</string>
+   </property>
+  </action>
+  <action name="actionCami_n">
+   <property name="text">
+    <string>Camión</string>
+   </property>
+  </action>
+  <action name="actionIm_genes">
+   <property name="text">
+    <string>Imágenes</string>
+   </property>
+  </action>
+  <action name="actionTexteo">
+   <property name="text">
+    <string>Texto</string>
+   </property>
+  </action>
+  <action name="actionTexto_enriquecido">
+   <property name="text">
+    <string>Texto enriquecido</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionArial">
+   <property name="text">
+    <string>Arial</string>
+   </property>
+  </action>
+  <action name="actionTimes_New_Roman">
+   <property name="text">
+    <string>Times New Roman</string>
+   </property>
+  </action>
+  <action name="actionCourier">
+   <property name="text">
+    <string>Courier</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -4,7 +4,7 @@ El grupo A esta formado por las mujeres con un nombre anterior a la M y los homb
 posterior a la N y el grupo B por el resto. Escribir un programa que pregunte al usuario su nombre y sexo,
 y muestre por pantalla el grupo que le corresponde.
 '''
-
+import math
 nombre = input('Introduce el nombre: ')
 inicial= nombre[0].lower()
 sexo = 'Holi'

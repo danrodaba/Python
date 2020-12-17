@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QMessageBox, qApp, QStyle, QLabel, QMenu
-from PyQt5.QtGui import QIcon 
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
       
 

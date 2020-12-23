@@ -3,7 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from math import pi, e, log
 
-class Ventana(QMainWindow):
+class Calculadora(QMainWindow):
     
     def __init__(self):
         QMainWindow.__init__(self)
@@ -152,8 +152,8 @@ class Ventana(QMainWindow):
         if self.resultado[-2:]=='.0':
             self.resultado=self.resultado[:-2]
         self.valores.setText(self.resultado)
-        
-app = QApplication(sys.argv)
-miVentana = Ventana()
-miVentana.show()
-app.exec_()
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    miVentana = Calculadora()
+    miVentana.show()
+    app.exec_()

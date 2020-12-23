@@ -3,7 +3,8 @@ from PyQt5 import uic, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QMessageBox, qApp, QStyle, QLabel, QMenu
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
-      
+from formulario import Formulario1
+from calculadora import Calculadora
 
 class Ventana(QMainWindow):
         
@@ -19,10 +20,19 @@ class Ventana(QMainWindow):
         self.actionTipo.triggered.connect(self.menuTipo)
         self.actionLogitud.triggered.connect(self.menuLongitud)
         self.actionSangrado.triggered.connect(self.menuSangrado)
+        self.actionCalculadora.triggered.connect(self.menuCalculadora)
 
 
     def menuAbrir(self):
-        print('Abrir')
+        sub_ventana = Formulario1()
+        self.mdiArea.addSubWindow(sub_ventana)
+        self.mdiArea.tileSubWindows()
+        sub_ventana.show()
+    def menuCalculadora(self):
+        sub_ventana = Calculadora()
+        self.mdiArea.addSubWindow(sub_ventana)
+        self.mdiArea.tileSubWindows()
+        sub_ventana.show()
     def menuGuardar(self):
         print('Guardar')
     def menuImprimir(self):

@@ -2,7 +2,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import * 
 
-class Ventana(QMainWindow):
+class Formulario1(QMainWindow):
 
     datos=[]
 
@@ -30,8 +30,8 @@ class Ventana(QMainWindow):
 
         
 
-
-app = QApplication(sys.argv)
-miVentana = Ventana()
-miVentana.show()
-app.exec_()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    miVentana = Formulario1()
+    miVentana.show()
+    app.exec_()

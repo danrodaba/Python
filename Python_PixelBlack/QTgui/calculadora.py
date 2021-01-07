@@ -152,6 +152,8 @@ class Calculadora(QMainWindow):
         if self.resultado[-2:]=='.0':
             self.resultado=self.resultado[:-2]
         self.valores.setText(self.resultado)
+
+        
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     miVentana = Calculadora()

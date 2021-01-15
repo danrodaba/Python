@@ -25,7 +25,7 @@ class AccesoBD:
                 user=self.usuario,
                 password=self.pwd,
                 database=self.bd,
-                auth_plugin = 'mysql_native_password'
+                auth_plugin='mysql_native_password'
             )
             self.mycursor = self.mydb.cursor()
         except Exception:
@@ -96,5 +96,3 @@ class AccesoBD:
             print("Error al cerrar")
             e = sys.exc_info()
             print(e)
-
-

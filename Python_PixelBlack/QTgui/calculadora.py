@@ -7,7 +7,7 @@ class Calculadora(QMainWindow):
     
     def __init__(self):
         QMainWindow.__init__(self)
-        uic.loadUi('calculadora.ui',self)
+        uic.loadUi('calculadora.ui', self)
         self.resultado = ''
         self.operacion = ''
         self.valor1 = '0'

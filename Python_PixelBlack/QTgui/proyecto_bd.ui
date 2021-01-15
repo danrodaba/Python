@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>provincia</class>
+ <widget class="QMainWindow" name="provincia">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>442</width>
+    <height>313</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DNI/NIF</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dirección</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dni">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>281</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>15</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nombre">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>60</y>
+      <width>281</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="direccion">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>100</y>
+      <width>281</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>150</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_aceptar">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>220</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Aceptar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_cancelar">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>220</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancelar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_limpiar">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>220</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Limpiar</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="fecha_nacimiento">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>180</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>F. Nacimiento</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>140</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Provincia</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="provincia_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>140</y>
+      <width>281</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>A Coruña</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Álava</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Albacete</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Alicante</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Almería</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Asturias</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ávila</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Badajoz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Baleares</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Barcelona</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Burgos</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cáceres</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cádiz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cantabria</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Castellón</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ciudad Real</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Córdoba</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cuenca</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Girona</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Granada</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Guadalajara</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gipuzkoa</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Huelva</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Huesca</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Jaén</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>La Rioja</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Las Palmas</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>León</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lérida</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lugo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Madrid</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Málaga</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Murcia</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Navarra</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ourense</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Palencia</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pontevedra</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Salamanca</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Segovia</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sevilla</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Soria</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tarragona</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Santa Cruz de Tenerife</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Teruel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Toledo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Valencia</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Valladolid</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Vizcaya</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Zamora</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Zaragoza</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ceuta</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Melilla</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="credito">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>180</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Crédito</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>442</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>dni</tabstop>
+  <tabstop>nombre</tabstop>
+  <tabstop>direccion</tabstop>
+  <tabstop>btn_aceptar</tabstop>
+  <tabstop>btn_limpiar</tabstop>
+  <tabstop>btn_cancelar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -317,7 +317,7 @@
      <string>Comunidad Autónoma</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="rdbtn">
+   <widget class="QRadioButton" name="rdbtn_hombre">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -411,7 +411,7 @@
    <widget class="QPushButton" name="btn_limpiar">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>360</x>
       <y>250</y>
       <width>93</width>
       <height>28</height>
@@ -432,19 +432,6 @@
     </property>
     <property name="text">
      <string>Aceptar</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_eliminar">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>250</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eliminar</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_salir">
@@ -516,14 +503,13 @@
   <tabstop>cp</tabstop>
   <tabstop>provincia_cbb</tabstop>
   <tabstop>email</tabstop>
-  <tabstop>rdbtn</tabstop>
+  <tabstop>rdbtn_hombre</tabstop>
   <tabstop>rdbtn_muje</tabstop>
   <tabstop>rdbtn_NoBinario</tabstop>
   <tabstop>cbx_deudor</tabstop>
   <tabstop>cbx_credito</tabstop>
   <tabstop>btn_aceptar</tabstop>
   <tabstop>btn_limpiar</tabstop>
-  <tabstop>btn_eliminar</tabstop>
   <tabstop>btn_salir</tabstop>
  </tabstops>
  <resources/>

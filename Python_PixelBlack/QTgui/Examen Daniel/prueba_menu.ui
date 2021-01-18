@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1291</width>
+    <width>780</width>
     <height>824</height>
    </rect>
   </property>
@@ -25,7 +25,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1291</width>
+     <width>780</width>
      <height>26</height>
     </rect>
    </property>
@@ -94,6 +94,35 @@
     </property>
     <addaction name="actionCalculadora"/>
    </widget>
+   <widget class="QMenu" name="menuMen_1">
+    <property name="title">
+     <string>Menú 1</string>
+    </property>
+    <widget class="QMenu" name="menuMantenimiento">
+     <property name="title">
+      <string>Mantenimiento</string>
+     </property>
+     <addaction name="actionClientes"/>
+     <addaction name="actionProductos"/>
+    </widget>
+    <widget class="QMenu" name="menuGesti_n">
+     <property name="title">
+      <string>Gestión</string>
+     </property>
+     <widget class="QMenu" name="menuFacturas">
+      <property name="title">
+       <string>Facturas</string>
+      </property>
+      <addaction name="actionProforma"/>
+      <addaction name="actionNormal"/>
+     </widget>
+     <addaction name="actionPresupuestos"/>
+     <addaction name="menuFacturas"/>
+    </widget>
+    <addaction name="menuMantenimiento"/>
+    <addaction name="menuGesti_n"/>
+   </widget>
+   <addaction name="menuMen_1"/>
    <addaction name="menuArchivo"/>
    <addaction name="menuEdici_n"/>
    <addaction name="menuVista"/>
@@ -221,6 +250,31 @@
   <action name="actionCalculadora">
    <property name="text">
     <string>Calculadora</string>
+   </property>
+  </action>
+  <action name="actionClientes">
+   <property name="text">
+    <string>Clientes</string>
+   </property>
+  </action>
+  <action name="actionProductos">
+   <property name="text">
+    <string>Productos</string>
+   </property>
+  </action>
+  <action name="actionPresupuestos">
+   <property name="text">
+    <string>Presupuestos</string>
+   </property>
+  </action>
+  <action name="actionProforma">
+   <property name="text">
+    <string>Proforma</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="text">
+    <string>Normal</string>
    </property>
   </action>
  </widget>

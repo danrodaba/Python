@@ -11,11 +11,11 @@ class Ventana(QMainWindow):
         
     def __init__(self):
         QMainWindow.__init__(self)
-        uic.loadUi('prueba_menu.ui',self)
+        uic.loadUi('prueba_menu.ui', self)
         self.define_menu()
 
     def define_menu(self):
-        self.action_Abrir.triggered.connect(self.menuAbrir)
+        self.actionClientes.triggered.connect(self.menuAbrir)
         self.actionGuardar.triggered.connect(self.menuGuardar)
         self.actionImprimir.triggered.connect(self.menuImprimir)
         self.actionTipo.triggered.connect(self.menuTipo)

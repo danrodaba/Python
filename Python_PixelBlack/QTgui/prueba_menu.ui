@@ -6,21 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1291</width>
+    <height>824</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>1291</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -28,6 +34,9 @@
      <string>Archivo</string>
     </property>
     <widget class="QMenu" name="Qmenu_Abrir">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="title">
       <string>Abrir</string>
      </property>
@@ -69,7 +78,7 @@
     <property name="title">
      <string>Insertar</string>
     </property>
-    <addaction name="actionIm_genes"/>
+    <addaction name="actionImagenes"/>
     <addaction name="actionTexteo"/>
     <addaction name="actionTexto_enriquecido"/>
    </widget>
@@ -79,10 +88,17 @@
     </property>
     <addaction name="actionSalir"/>
    </widget>
+   <widget class="QMenu" name="menuCalculadora">
+    <property name="title">
+     <string>Calculadora</string>
+    </property>
+    <addaction name="actionCalculadora"/>
+   </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuEdici_n"/>
    <addaction name="menuVista"/>
    <addaction name="menuInsertar"/>
+   <addaction name="menuCalculadora"/>
    <addaction name="menuSalir"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -110,6 +126,9 @@
   <action name="action_Abrir">
    <property name="text">
     <string>Abrir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
   <action name="actionTipo">
@@ -164,7 +183,7 @@
     <string>Camión</string>
    </property>
   </action>
-  <action name="actionIm_genes">
+  <action name="actionImagenes">
    <property name="text">
     <string>Imágenes</string>
    </property>
@@ -197,6 +216,11 @@
   <action name="actionCourier">
    <property name="text">
     <string>Courier</string>
+   </property>
+  </action>
+  <action name="actionCalculadora">
+   <property name="text">
+    <string>Calculadora</string>
    </property>
   </action>
  </widget>

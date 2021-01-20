@@ -234,47 +234,47 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>130</y>
+      <x>340</x>
+      <y>110</y>
       <width>61</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Mentales</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Mentales&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>130</y>
+      <x>180</x>
+      <y>110</y>
       <width>61</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Sociales</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sociales&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>130</y>
+      <x>20</x>
+      <y>110</y>
       <width>55</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Físicos</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Físicos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>220</y>
+      <y>200</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -287,7 +287,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
+      <y>140</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -300,7 +300,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>190</y>
+      <y>170</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -312,8 +312,8 @@
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>190</y>
+      <x>180</x>
+      <y>170</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -325,8 +325,8 @@
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>220</y>
+      <x>180</x>
+      <y>200</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -338,8 +338,8 @@
    <widget class="QLabel" name="label_18">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>160</y>
+      <x>180</x>
+      <y>140</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -351,8 +351,8 @@
    <widget class="QLabel" name="label_19">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>160</y>
+      <x>340</x>
+      <y>140</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -364,8 +364,8 @@
    <widget class="QLabel" name="label_20">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>190</y>
+      <x>340</x>
+      <y>170</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -377,14 +377,130 @@
    <widget class="QLabel" name="label_21">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>220</y>
+      <x>340</x>
+      <y>200</y>
       <width>71</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Astucia</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinFuerza">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>140</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinDestreza">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>170</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinResistencia">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>200</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinApariencia">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinManipulacion">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>170</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinCarisma">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>140</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinPercepcion">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>140</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinAstucia">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>200</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinInteligencia">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>170</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="master_modo">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>110</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Modo máster</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_crear">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>650</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Crear ficha</string>
     </property>
    </widget>
   </widget>

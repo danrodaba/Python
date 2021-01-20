@@ -20,6 +20,7 @@
     </item>
    </layout>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -29,26 +30,6 @@
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuArchivo">
-    <property name="title">
-     <string>Archivo</string>
-    </property>
-    <widget class="QMenu" name="Qmenu_Abrir">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="title">
-      <string>Abrir</string>
-     </property>
-     <addaction name="action_Abrir"/>
-     <addaction name="actionTipo"/>
-     <addaction name="actionLogitud"/>
-    </widget>
-    <addaction name="separator"/>
-    <addaction name="Qmenu_Abrir"/>
-    <addaction name="actionGuardar"/>
-    <addaction name="actionImprimir"/>
-   </widget>
    <widget class="QMenu" name="menuEdici_n">
     <property name="title">
      <string>Edición</string>
@@ -88,15 +69,9 @@
     </property>
     <addaction name="actionSalir"/>
    </widget>
-   <widget class="QMenu" name="menuCalculadora">
-    <property name="title">
-     <string>Calculadora</string>
-    </property>
-    <addaction name="actionCalculadora"/>
-   </widget>
    <widget class="QMenu" name="menuMen_1">
     <property name="title">
-     <string>Menú 1</string>
+     <string>Archivo</string>
     </property>
     <widget class="QMenu" name="menuMantenimiento">
      <property name="title">
@@ -123,14 +98,11 @@
     <addaction name="menuGesti_n"/>
    </widget>
    <addaction name="menuMen_1"/>
-   <addaction name="menuArchivo"/>
    <addaction name="menuEdici_n"/>
    <addaction name="menuVista"/>
    <addaction name="menuInsertar"/>
-   <addaction name="menuCalculadora"/>
    <addaction name="menuSalir"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionGuardar">
    <property name="text">
     <string>Guardar</string>

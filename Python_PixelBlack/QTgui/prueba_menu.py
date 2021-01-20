@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QMessageBox, qAp
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 from formulario import Formulario1
-from calculadora import Calculadora
 
 
 class Ventana(QMainWindow):
@@ -15,25 +14,17 @@ class Ventana(QMainWindow):
         self.define_menu()
 
     def define_menu(self):
-        self.actionClientes.triggered.connect(self.menuAbrir)
-        self.actionGuardar.triggered.connect(self.menuGuardar)
-        self.actionImprimir.triggered.connect(self.menuImprimir)
+        self.actionClientes.triggered.connect(self.menuClientes)
         self.actionTipo.triggered.connect(self.menuTipo)
         self.actionLogitud.triggered.connect(self.menuLongitud)
         self.actionSangrado.triggered.connect(self.menuSangrado)
-        self.actionCalculadora.triggered.connect(self.menuCalculadora1)
 
-    def menuAbrir(self):
+    def menuClientes(self):
         sub_ventana = Formulario1()
         self.mdiArea.addSubWindow(sub_ventana)
         self.mdiArea.tileSubWindows()
         sub_ventana.show()
 
-    def menuCalculadora1(self):
-        sub_ventana = Calculadora()
-        self.mdiArea.addSubWindow(sub_ventana)
-        self.mdiArea.tileSubWindows()
-        sub_ventana.show()
 
     def menuGuardar(self):
         print('Guardar')

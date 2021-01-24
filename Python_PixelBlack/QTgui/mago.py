@@ -12,12 +12,144 @@ class FichaMago(QMainWindow):
         QMainWindow.__init__(self)
         uic.loadUi('mago.ui', self)
         self.btn_crear.clicked.connect(self.crear_ficha)
-    def etiquetas(self, crear_ficha):
+
+        # Atributos
+        self.spinFuerza.valueChanged.connect(self.datos_ficha)
+        self.spinDestreza.valueChanged.connect(self.datos_ficha)
+        self.spinResistencia.valueChanged.connect(self.datos_ficha)
+        self.spinManipulacion.valueChanged.connect(self.datos_ficha)
+        self.spinApariencia.valueChanged.connect(self.datos_ficha)
+        self.spinPercepcion.valueChanged.connect(self.datos_ficha)
+        self.spinInteligencia.valueChanged.connect(self.datos_ficha)
+        self.spinAstucia.valueChanged.connect(self.datos_ficha)
+        self.spinCarisma.valueChanged.connect(self.datos_ficha)
+
+        # talentos
+        self.spinAlerta.valueChanged.connect(self.datos_ficha)
+        self.spinArte.valueChanged.connect(self.datos_ficha)
+        self.spinAtletismo.valueChanged.connect(self.datos_ficha)
+        self.spinCallejeo.valueChanged.connect(self.datos_ficha)
+        self.spinConsciencia.valueChanged.connect(self.datos_ficha)
+        self.spinEmpatia.valueChanged.connect(self.datos_ficha)
+        self.spinExpresion.valueChanged.connect(self.datos_ficha)
+        self.spinIntimidacion.valueChanged.connect(self.datos_ficha)
+        self.spinLiderazgo.valueChanged.connect(self.datos_ficha)
+        self.spinPelea.valueChanged.connect(self.datos_ficha)
+        self.spinSubterfugio.valueChanged.connect(self.datos_ficha)
+
+        # técnicas
+        self.spinArmasFuego.valueChanged.connect(self.datos_ficha)
+        self.spinMarciales.valueChanged.connect(self.datos_ficha)
+        self.spinArtesania.valueChanged.connect(self.datos_ficha)
+        self.spinConducir.valueChanged.connect(self.datos_ficha)
+        self.spinDocumentacion.valueChanged.connect(self.datos_ficha)
+        self.spinEtiqueta.valueChanged.connect(self.datos_ficha)
+        self.spinMeditacion.valueChanged.connect(self.datos_ficha)
+        self.spinArmas.valueChanged.connect(self.datos_ficha)
+        self.spinSigilo.valueChanged.connect(self.datos_ficha)
+        self.spinSupervivencia.valueChanged.connect(self.datos_ficha)
+        self.spinTecnologia.valueChanged.connect(self.datos_ficha)
+
+        # conocimientos
+        self.spinAcademicismo.valueChanged.connect(self.datos_ficha)
+        self.spinCiencias.valueChanged.connect(self.datos_ficha)
+        self.spinCosmologia.valueChanged.connect(self.datos_ficha)
+        self.spinEnigmas.valueChanged.connect(self.datos_ficha)
+        self.spinEsoterismo.valueChanged.connect(self.datos_ficha)
+        self.spinInformatica.valueChanged.connect(self.datos_ficha)
+        self.spinInvestigacion.valueChanged.connect(self.datos_ficha)
+        self.spinLeyes.valueChanged.connect(self.datos_ficha)
+        self.spinMedicina.valueChanged.connect(self.datos_ficha)
+        self.spinOcultismo.valueChanged.connect(self.datos_ficha)
+        self.spinPolitica.valueChanged.connect(self.datos_ficha)
+        
+
+    
+    def datos_ficha(self, crear_ficha):
+        # Identificación
+        self.NOMBRE = self.nombre.text()
+        self.JUGADOR = self.jugador.text()
+        self.CRONICA = self.cronica.text()
+        self.NATURALEZA = self.naturaleza.text()
+        self.CONDUCTA = self.conducta.text()
+        self.ESENCIA = self.esencia.text()
+        self.AFILIACION = self.afiliacion.text()
+        self.SECTA = self.secta.text()
+        self.CONCEPTO = self.concepto.text()
+
+        # Atributos
+        self.FUERZA = self.spinFuerza.value()
+        self.DESTREZA = self.spinDestreza.value()
+        self.RESISTENCIA = self.spinResistencia.value()
+        self.CARISMA = self.spinCarisma.value()
+        self.MANIPULACION = self.spinManipulacion.value()
+        self.APARIENCIA = self.spinApariencia.value()
+        self.PERCEPCION = self.spinPercepcion.value()
+        self.INTELIGENCIA = self.spinInteligencia.value()
+        self.ASTUCIA = self.spinAstucia.value()
+
+        self.fisicos = [self.FUERZA, self.DESTREZA, self.RESISTENCIA]
+        self.sociales = [self.CARISMA, self.MANIPULACION, self.APARIENCIA]
+        self.mentales = [self.PERCEPCION, self.INTELIGENCIA, self.ASTUCIA]
+
+        # esto es para reproducir la suma de cada una de las categorías de los atributos
+        self.lbl_fisicos.setText(str((sum(self.fisicos)-3)))
+        self.lbl_sociales.setText(str((sum(self.sociales)-3)))
+        self.lbl_mentales.setText(str((sum(self.mentales)-3)))
+
+        # Ahora vamos a hacer lo mismo con las habilidades.
+
+        # talentos
+        self.ALERTA = self.spinAlerta.value()
+        self.ARTE = self.spinArte.value()
+        self.ATLETISMO = self.spinAtletismo.value()
+        self.CALLEJEO = self.spinCallejeo.value()
+        self.CONSCIENCIA = self.spinConsciencia.value()
+        self.EMPATIA = self.spinEmpatia.value()
+        self.EXPRESION = self.spinExpresion.value()
+        self.INTIMIDACION = self.spinIntimidacion.value()
+        self.LIDERAZGO = self.spinLiderazgo.value()
+        self.PELEA = self.spinPelea.value()
+        self.SUBTERFUGIO = self.spinSubterfugio.value()
+
+        # técnicas
+        self.AFUEGO = self.spinArmasFuego.value()
+        self.AMARCIALES = self.spinMarciales.value()
+        self.ARTESANIA = self.spinArtesania.value()
+        self.CONDUCIR = self.spinConducir.value()
+        self.DOCUMENTACION = self.spinDocumentacion.value()
+        self.ETIQUETA = self.spinEtiqueta.value()
+        self.MEDITACION = self.spinMeditacion.value()
+        self.PARMAS = self.spinArmas.value()
+        self.SIGILO = self.spinSigilo.value()
+        self.SUPERVIVENCIA = self.spinSupervivencia.value()
+        self.TECNOLOGIA = self.spinTecnologia.value()
+
+        # conocimientos
+        self.ACADEMICISMO = self.spinAcademicismo.value()
+        self.CIENCIAS = self.spinCiencias.value()
+        self.COSMOLOGIA = self.spinCosmologia.value()
+        self.ENIGMAS = self.spinEnigmas.value()
+        self.ESOTERISMO = self.spinEsoterismo.value()
+        self.INFORMATICA = self.spinInformatica.value()
+        self.INVESTIGACION = self.spinInvestigacion.value()
+        self.LEYES = self.spinLeyes.value()
+        self.MEDICINA = self.spinMedicina.value()
+        self.OCULTISMO = self.spinOcultismo.value()
+        self.POLITICA = self.spinPolitica.value()
+
+        self.talentos = [self.ALERTA, self.ARTE, self.ATLETISMO, self.CALLEJEO, self.CONSCIENCIA, self.EMPATIA, self.EXPRESION, self.INTIMIDACION, self.LIDERAZGO, self.PELEA, self.SUBTERFUGIO]
+        self.tecnicas = [self.AFUEGO, self.AMARCIALES, self.ARTESANIA, self.CONDUCIR, self.DOCUMENTACION, self.ETIQUETA, self.MEDITACION, self.PARMAS, self.SIGILO, self.SUPERVIVENCIA, self.TECNOLOGIA]
+        self.conocimientos = [self.ACADEMICISMO, self.CIENCIAS, self.COSMOLOGIA, self.ENIGMAS, self.ESOTERISMO, self.INFORMATICA, self.INVESTIGACION, self.LEYES, self.MEDICINA, self.OCULTISMO, self.POLITICA]
+        
+        self.lbl_tecnicas.setText(str((sum(self.fisicos)-3)))
+        self.lbl_conocimientos.setText(str((sum(self.sociales)-3)))
+        self.lbl_talentos.setText(str((sum(self.mentales)-3)))
+        
         # esto es para reproducir la suma de cada una de las categorías de las habilidades
         self.lbl_talentos.setText(str(sum(self.talentos)))
         self.lbl_tecnicas.setText(str(sum(self.tecnicas)))
         self.lbl_conocimientos.setText(str(sum(self.conocimientos)))
-        self.spinFuerza.valueChanged.connect()
     
 
     def crear_ficha(self):
@@ -148,7 +280,10 @@ class FichaMago(QMainWindow):
         #    print('Conocimientos y técnicas tienen asignada la misma cantidad de puntos. Corrige este error o activa el modo máster.')
             self.error = True
         
-
+        # esto es para reproducir la suma de cada una de las categorías de las habilidades
+        self.lbl_talentos.setText(str(sum(self.talentos)))
+        self.lbl_tecnicas.setText(str(sum(self.tecnicas)))
+        self.lbl_conocimientos.setText(str(sum(self.conocimientos)))
 
 
         

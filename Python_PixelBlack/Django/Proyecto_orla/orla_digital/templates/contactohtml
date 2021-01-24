@@ -1,0 +1,45 @@
+ 
+
+ <div class="modal" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="modalContactLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+          <h4 class="modal-title" id="myModalLabel">¿Desea ponerse en contacto con nosotros?</h4>
+        </div>
+        <div class="modal-body">
+
+              <form class="form-horizontal" name="commentform" method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <div class="form-actions">
+                    <button type="submit">Enviar</button>
+                  </div>
+              </form>
+                  <div class="form-group">
+                      <label class="control-label col-md-3" for="subject">Asunto</label>
+                      <div class="col-md-8">
+                          <input class="form-control" id="subject" name="subject" placeholder="Asunto del Mensaje" type="text">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label col-md-3" for="email">EMail</label>
+                      <div class="col-md-8">
+                          <input class="form-control" id="email" name="email" placeholder="Email" type="email">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label col-md-3" for="comment">Mensaje</label>
+                      <div class="col-md-8">
+                          <textarea rows="6" class="form-control" id="Message" name="Message" placeholder="Escriba su comentario aquí"></textarea>
+                      </div>
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default">enviar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>

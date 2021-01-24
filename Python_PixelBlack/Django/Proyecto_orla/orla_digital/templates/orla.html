@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	{% include 'head.html' %}	
+	
+<style>
+body {  
+  background-repeat: no-repeat;
+    background: url("{% static 'images/clasico-azul.png' %}") no-repeat bottom center fixed;
+    background-size: 99% 90%;
+}
+</style>
+ 	
+</head>
+
+<body>
+	<!-- NAVBAR Y VENTANAS MODALES DE MENÚ-->
+	{% include 'menu.html' %}
+	{% block content %}
+	<!-- VENTANA MODAL PROFESOR -->
+	{% for orla in orla %}
+	<div class="modal" id="modal1{{ orla.nombre }}" tabindex="-1" role="dialog" aria-labelledby="modalAboutLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+			  <h4 class="modal-title" id="myModalLabel">{{ orla.nombre }} {{ orla.apellidos }}</h4>
+			</div>
+			<div class="modal-body">
+				<img src="{{ MEDIA_URL }}{{ orla.image.url }}" style="float: left; height:60;"> 
+			{{orla.texto}} <br><center><img src="{% static 'images/logo_pixelblack.png' %}" height="60"></center>
+			
+		</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  {% endfor %}  
+	  <!-- VENTANA MODAL ALUMNOS -->
+	{% for orla2 in orla2 %}
+	<div class="modal" id="modal2{{ orla2.nombre }}" tabindex="-1" role="dialog" aria-labelledby="modalAboutLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+			  <h4 class="modal-title" id="myModalLabel">{{ orla2.nombre }} {{ orla2.apellidos }}</h4>
+			</div>
+			<div class="modal-body">
+				<img src="{{ MEDIA_URL }}{{ orla2.image.url }}" style="float: left;height:60;"> 
+			{{orla2.texto}} <br><center><img src="{% static 'images/logo_pixelblack.png' %}" height="60"></center>
+			
+		</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  {% endfor %}  
+	<!-- CONTENIDO DE LA ORLA: TITULOS Y PERSONAL-->
+	<div id="container">
+		{% include 'rotulos.html' %}
+		
+		<!-- Video profesores -->
+		{% for orla in orla %}
+		<div id="Image_1">
+			<a href="#" data-toggle="modal" data-target="#modal1{{ orla.nombre }}">
+			<video width="100%"  autoplay loop>
+			<source src="{{ MEDIA_URL }}{{ orla.video.url }}" type="video/mp4">
+			<source src=" " type="video/ogg">
+				Su navegador no soporta video html5
+			</video><span>{{ orla.nombre }} {{ orla.apellidos }} -</span>
+			</a>
+			<img src="{{ orla.image.url }}" style="float: left;">
+		</div>
+		{% endfor %}
+	
+		<br>
+		<!-- Vídeo Alumnos -->
+		{% for orla2 in orla2 %}
+        <div id="Image_4">
+			<a href="#" data-toggle="modal" data-target="#modal2{{ orla2.nombre }}">
+			<video width="100%"  autoplay loop>
+			<source src="{{ MEDIA_URL }}{{ orla2.video.url }}" type="video/mp4">
+				Su navegador no soporta video html5
+			</video><span>{{ orla2.nombre }} {{ orla2.apellidos }} </span>
+			</a>
+		</div>
+		{% endfor %}
+		{% endblock %}
+
+    </div>   
+ <!-- FIN CONTENIDO DE LA ORLA -->
+         
+<!-- SCRIPTS FUNCIONES -->   
+{% include 'footer.html' %}
+
+</body>
+</html>

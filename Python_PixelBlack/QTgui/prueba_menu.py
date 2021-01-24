@@ -25,7 +25,6 @@ class Ventana(QMainWindow):
         self.mdiArea.tileSubWindows()
         sub_ventana.show()
 
-
     def menuGuardar(self):
         print('Guardar')
 
@@ -42,13 +41,10 @@ class Ventana(QMainWindow):
         print('Sangrado')
     
         toggleAction = QAction('Etiqueta con checking', self, checkable=True)
-        #toggleAction.setCheckable(False)      método para alterar el estado del Checking
         toggleAction.setStatusTip('Etiqueta con cheking')
         toggleAction.triggered.connect(self.etiqueta_checking)
 
-        #exitAction = QAction(self.style().standardIcon(QStyle.SP_DialogCancelButton),'&Exit', self)  #icono para la accion(la sa a de la libreria'QStyle')
         exitAction = QAction(QIcon('exit-32.png'), 'Salir', self)  #icono para la accion sacado de un archivo
-        #exitAction = QAction('&Exit', self)  #esta linea se quita si porque está repetida con las de arriba donde pongo las imagenes      
         exitAction.setShortcut('Ctrl+Q')
         exitAction.setStatusTip('Salir de la aplicación')
         exitAction.triggered.connect(qApp.quit)

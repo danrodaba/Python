@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de anuncios</title>
+  <link rel="icon" type="image/png" href="static/img/favicon_512.png" />
+<style>
+html, body{
+  margin: 0;
+  padding:0;
+}
+header{
+  position:relative;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 200px;
+    background-image:url('static/img/cabecera.jpg');
+    background-size: cover;
+}
+header h1{
+  padding: 20px;
+}
+nav{
+
+       position: absolute;
+       width: 100%;
+       bottom: 0px;
+       min-height: 50px;
+       background-color:#333;
+       text-align: center;
+     }
+ 
+nav ul{
+        list-style: none;
+        display: inline-block;
+     }
+ 
+nav ul li{
+         float: left;
+         margin-top: 0px;
+     }
+ 
+nav ul li a {
+         color: white;
+         font-weight: bold;
+         text-decoration: none;
+         font-size: 20px;
+         padding: 20px;
+     }
+ 
+a:hover{
+       color: #ffcc00;
+     }
+#contenedor{
+  width: 100%;
+  margin:0;
+  padding: 0;
+}
+#content{
+   overflow: hidden; 
+  width: 80%;
+  height:100%; 
+  margin: 10px auto; 
+  border: solid #ccc 1px;
+  padding: 0px 0px 10px 0px;
+  }
+#content h1{
+  width: 100%;
+  background: tomato;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+}
+.anuncio{
+  display:block;
+  padding:10px;
+}
+.anuncio h2{
+  clear: both;
+}
+img{
+  margin: 0px 5px;
+  border: 1px #ccc solid;
+  border-radius: 4px;
+  padding: 8px;
+  clear: both;
+}
+div.individual{
+  display: block;
+  float: left;
+  width: 48%;
+  margin-left: 1.5%;
+  margin-bottom: 20px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+}
+p{
+  text-align: justify;
+  padding: 10px;
+}
+footer{
+  position: relative;
+  min-height: 6rem;
+  width: 100%;
+  background: #555;
+  margin: 0;
+  padding:0;
+}
+#footer3{
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  color: #fff;
+  background: #000;
+  padding: 8px 0;
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+<div id="contenedor">
+  <header>
+        {% include 'cabecera.html' %}
+        <nav>
+        {% include 'menu.html' %}
+  </nav>
+  </header>
+      
+  
+  <div id="content">
+    <h1>FORMULARIO DE CONTACTO</h1>
+     
+      <div class="anuncio">
+         
+        <div class="individual">
+          <h2>
+             
+          </h2>
+          <p>
+         
+          </p>
+        </div>
+       
+      </div>  
+   
+  </div>
+    
+</div>
+{% include 'footer.html' %}
+</body>
+</html>
+

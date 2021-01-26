@@ -6,9 +6,11 @@ from django.http import HttpResponse
 from .models import Curso
 from .models import Orla
 
-#def curso_list(request):
-    #curso = Curso.objects.filter(num='1')
-    #return render(request, 'orla.html', {'curso': curso})
+'''
+Llamamos orla y orla2 a los filtro para las bases de datos referentes a profesores y alumnos respectivamente.
+Luego las devolvemos a la plantilla, en este caso "orla.html".
+
+'''
 
 def orla_list(request):
    curso = Curso.objects.filter(num='1')
@@ -17,12 +19,18 @@ def orla_list(request):
    return render(request, 'orla.html', {'curso': curso, 'orla': orla,'orla2': orla2})
 
 
+# Falluto foerte. Ni caso.
+
 def home(request):
     return HttpResponse('¡Hola Mundo!')
 
 import io
 from django.http import FileResponse
 #from reportlab.pdfgen import canvas
+
+'''
+Aquí tratamos de poner la orla en pdf, pero es más duro que Chuck Norris veestido de Batman, así que finjamos que no existe.
+'''
 
 def some_view(request):
     # Creamos un buffer similar a un archivo, para recibir los datos del PDF

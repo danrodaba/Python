@@ -81,33 +81,41 @@ class Formulario1(QMainWindow):
             if self.datos[i] == '':
                 self.datos[i] = 'null'
 
-        print(self.SQL_busqueda)
-        print(self.respuesta_SQL)
-        if self.respuesta_SQL == [] # si la respuesta está vacía, no existe la entrada y se crea nueva:
+        self.campos = 'dni nombre apellidos direccion comunidad_autonoma provincia poblacion cp telefono email sexo fnac observaciones deudor credito'.split()
+        
+        if self.respuesta_SQL == []: # si la respuesta está vacía, no existe la entrada y se crea nueva:
 
             #ahora procedo a meterlo en la base de datos
 
-            sentencia_SQL = 'insert into cliente (dni, nombre, apellidos, direccion, comunidad_autonoma, provincia, poblacion, cp, telefono, email, sexo, fnac, observaciones, deudor, credito) values ('
-            sentencia_SQL += '"' + str(self.datos[0])
+            self.sentencia_SQL = 'insert into cliente (dni, nombre, apellidos, direccion, comunidad_autonoma, provincia, poblacion, cp, telefono, email, sexo, fnac, observaciones, deudor, credito) values ('
+            self.sentencia_SQL += '"' + str(self.datos[0])
             for i in self.datos[1:-2]:
-                sentencia_SQL +=  '" , "' + str(i)
-            sentencia_SQL += '"'
+                self.sentencia_SQL +=  '" , "' + str(i)
+            self.sentencia_SQL += '"'
             for i in self.datos[-2:len(self.datos)]:
-                sentencia_SQL +=  ', ' + str(i)
-            sentencia_SQL += ')'
-            sentencia_SQL=sentencia_SQL.replace('"null"', 'null')
+                self.sentencia_SQL += ', ' + str(i)
+            self.sentencia_SQL += ')'
+            self.sentencia_SQL = self.sentencia_SQL.replace('"null"', 'null')       #esto quita las comillas a los 'null'
             if len(self.datos[0]) == 9:
                 self.miBD.conectar()            # aquí tienes la conexión
-                self.miBD.ejecuta_comando_SQL(sentencia_SQL)
+                self.miBD.ejecuta_comando_SQL(self.sentencia_SQL)
                 self.miBD.desconectar()         # aquí la desconexión
             else:
                 print('No has introducido un DNI válido (8 cifras + 1 letra).')
 
             self.datos = []
         else:       # si la entrada no está vacía, el campo existe y solamente se va a actualizar.
-
-
-
+            self.actualizar = 'UPDATE cliente SET '
+            for i in range(len(self.datos)-1):
+                self.actualizar += str(self.campos[i+1]) + ' = '
+                self.actualizar += ' "' + str(self.datos[i+1]) + '", '
+            self.actualizar = self.actualizar[0:-2] + ' WHERE DNI = "' + str(self.DNI) + '";'
+            self.actualizar = self.actualizar.replace('"null"', 'null')
+            self.actualizar = self.actualizar.replace('"False"', 'False')
+            self.actualizar = self.actualizar.replace('"True"', 'True')
+            self.miBD.conectar()
+            self.miBD.ejecuta_comando_SQL(self.actualizar)
+            self.miBD.desconectar()
 
 
 if __name__ == '__main__':

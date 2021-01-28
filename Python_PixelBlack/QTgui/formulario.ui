@@ -433,6 +433,9 @@
     <property name="text">
      <string>Aceptar</string>
     </property>
+    <property name="shortcut">
+     <string>Return</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_salir">
     <property name="geometry">
@@ -445,6 +448,9 @@
     </property>
     <property name="text">
      <string>Salir</string>
+    </property>
+    <property name="shortcut">
+     <string>Esc</string>
     </property>
    </widget>
    <widget class="QLabel" name="Fnac_lbl_2">

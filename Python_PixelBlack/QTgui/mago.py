@@ -176,6 +176,7 @@ class FichaMago(QMainWindow):
         # empty list bool value is False
         # non-empty list boolea value is True
         return not bool(list)
+  
 
     def datos_ficha(self):
         # Identificación
@@ -324,10 +325,7 @@ class FichaMago(QMainWindow):
         self.dict_fisicos = {'Fuerza' : self.FUERZA , 'Destreza' : self.DESTREZA, 'Resistencia' : self.RESISTENCIA}
         self.dict_sociales = {'Carisma' : self.CARISMA , 'Manipulación' : self.MANIPULACION, 'Apariencia' : self.APARIENCIA}
         self.dict_mentales = {'Percepcion' : self.PERCEPCION , 'Inteligencia' : self.INTELIGENCIA, 'Astucia' : self.ASTUCIA}
-
-
         # en este fragmento vamos a comprobar que se cumplan las condiciones que nos pide la ficha respecto atributos
-
         if sum(self.fisicos) != 10 and sum(self.fisicos) != 8 and sum(self.fisicos) != 6:
             self.fallo = 'En la categoría "Físicos" no has sumado 3, 5 ni 7 puntos. Corrige este error o activa el modo máster.'
             self.error = True
@@ -352,8 +350,6 @@ class FichaMago(QMainWindow):
             self.fallo = 'Mentales y sociales tienen asignada la misma cantidad de puntos. Corrige este error o activa el modo máster.'
             self.error = True
             self.errores.append(self.fallo)
-        
-
         # los declaro como diccionarios y listas.
         self.dict_talentos = {'Alerta': self.ALERTA, 'Arte': self.ARTE, 'Atletismo': self.ATLETISMO, 'Callejeo': self.CALLEJEO, 'Consciencia': self.CONSCIENCIA, 'Empatia': self.EMPATIA, 'Expresión': self.EXPRESION,  'Intimidacion': self.INTIMIDACION, 'Liderazgo': self.LIDERAZGO, 'Pelea': self.PELEA, 'Subterfugio': self.SUBTERFUGIO}
         self.dict_tecnicas = {'Armas de fuego': self.AFUEGO, 'Artes Marciales': self.AMARCIALES, 'Artesania': self.ARTESANIA, 'Conducir': self.CONDUCIR, 'Documentación': self.DOCUMENTACION, 'Etiqueta': self.ETIQUETA, 'Meditacion': self.MEDITACION, 'Pelea con Armas': self.PARMAS, 'Sigilo': self.SIGILO, 'Supervivencia': self.SUPERVIVENCIA, 'Tecnologia': self.TECNOLOGIA}
@@ -361,9 +357,7 @@ class FichaMago(QMainWindow):
         self.talentos = [self.ALERTA, self.ARTE, self.ATLETISMO, self.CALLEJEO, self.CONSCIENCIA, self.EMPATIA, self.EXPRESION, self.INTIMIDACION, self.LIDERAZGO, self.PELEA, self.SUBTERFUGIO]
         self.tecnicas = [self.AFUEGO, self.AMARCIALES, self.ARTESANIA, self.CONDUCIR, self.DOCUMENTACION, self.ETIQUETA, self.MEDITACION, self.PARMAS, self.SIGILO, self.SUPERVIVENCIA, self.TECNOLOGIA]
         self.conocimientos = [self.ACADEMICISMO, self.CIENCIAS, self.COSMOLOGIA, self.ENIGMAS, self.ESOTERISMO, self.INFORMATICA, self.INVESTIGACION, self.LEYES, self.MEDICINA, self.OCULTISMO, self.POLITICA]
-        
         # en este fragmento vamos a comprobar que se cumplan las condiciones que nos pide la ficha respecto habilidades
-
         if sum(self.talentos) != 13 and sum(self.talentos) != 9 and sum(self.talentos) != 5:
             self.fallo = 'En la categoría "Talentos" no has sumado 5, 9 ni 13 puntos. Corrige este error o activa el modo máster.'
             self.error = True
@@ -388,11 +382,11 @@ class FichaMago(QMainWindow):
             self.fallo = 'Conocimientos y técnicas tienen asignada la misma cantidad de puntos. Corrige este error o activa el modo máster.'
             self.error = True
             self.errores.append(self.fallo)
-        
+            
         # ahora vamos a comprobar si hay errores y en función de ello, dar un mensaje o inyectar a la base de datos
         if self.error is True:
-            for i in self.errores:
-                print(i)
+            self.QDialog.warning(self.error)
+            self.setFixedSize(400, 200)
 
 
 

@@ -49,15 +49,15 @@ class Ventana(QMainWindow):
         exitAction.setStatusTip('Salir de la aplicación')
         exitAction.triggered.connect(qApp.quit)
 
-        menubar = self.menuBar()   #meto el objeto menuBar en una funcion para trabajar con el
-        fileMenu = menubar.addMenu('Archivo')  #añado elementos del menu
-        fileMenu.addAction(toggleAction)  #añado acciones. Sería los items que cuelgan de cada elemento de menu
+        menubar = self.menuBar()   # meto el objeto menuBar en una funcion para trabajar con el
+        fileMenu = menubar.addMenu('Archivo')  # añado elementos del menu
+        fileMenu.addAction(toggleAction)  # añado acciones. Sería los items que cuelgan de cada elemento de menu
         fileMenu.addAction(exitAction)
 
         # añado submenu
         nuevo_menu = QMenu('nuevo', self)   #creo un objeto de tipo menu. es el que contendrá el submenu
         accion_submenu = QAction('submenu', self)  #creo una accion nueva será la que contendra el submenu      
-        nuevo_menu.addAction(accion_submenu)    #añado la accion al submenu     
+        nuevo_menu.addAction(accion_submenu)    #añado la accion al submenu
         fileMenu.addMenu(nuevo_menu)   #añado el submenu al menu padre
 
     def etiqueta_checking(self, state):

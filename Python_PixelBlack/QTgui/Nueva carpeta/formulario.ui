@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>664</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(45, 43, 85);
+color: rgb(103, 222, 144);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>631</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(103, 222, 144);
+color: rgb(103, 222, 144);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>10</y>
+       <width>271</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(45, 43, 85);</string>
+     </property>
+     <property name="text">
+      <string>Formulario Clientes</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Datos">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>401</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(103, 222, 144);
+</string>
+    </property>
+    <property name="title">
+     <string>Datos Cliente</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>23</y>
+       <width>374</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>DNI/CIF</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtDni">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>Nombre</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtNombre">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>Dirección</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtDirec">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>Población</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtPobla">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>CP</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtCp">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>Provincia</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cbProvincia">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Murcia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Almería</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Alicante</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Barcelona</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>Teléfono</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtTlf">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_12"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>E-Mail</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtMail">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_14"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>40</number>
+        </property>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_16"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_15">
+        <item>
+         <widget class="QLabel" name="label_13">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);</string>
+          </property>
+          <property name="text">
+           <string>Observaciones</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="txtObser">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(103, 222, 144);
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QCommandLinkButton" name="btnSalir">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>520</y>
+      <width>101</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCommandLinkButton{		
+	color: rgb(103, 222, 144);
+}
+
+QCommandLinkButton:Hover{	
+	background-color: rgb(76, 0, 115);
+	color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Salir</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/salir.png</normaloff>icons/salir.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Alt+S</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>100</y>
+      <width>214</width>
+      <height>310</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QCommandLinkButton" name="btnAceptar">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCommandLinkButton{		
+	color: rgb(103, 222, 144);
+}
+
+QCommandLinkButton:Hover{	
+	background-color: rgb(76, 0, 115);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Aceptar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/comprobar.png</normaloff>icons/comprobar.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Alt+A</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCommandLinkButton" name="btnEliminar">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCommandLinkButton{		
+	color: rgb(103, 222, 144);
+}
+
+QCommandLinkButton:Hover{	
+	background-color: rgb(76, 0, 115);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Eliminar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/eliminar.png</normaloff>icons/eliminar.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Alt+€</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCommandLinkButton" name="btnImprimir">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCommandLinkButton{		
+	color: rgb(103, 222, 144);
+}
+
+QCommandLinkButton:Hover{	
+	background-color: rgb(76, 0, 115);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Imprimir</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/impresora.png</normaloff>icons/impresora.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Alt+I</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCommandLinkButton" name="btnLimpiar">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCommandLinkButton{		
+	color: rgb(103, 222, 144);
+}
+
+QCommandLinkButton:Hover{	
+	background-color: rgb(76, 0, 115);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Limpiar</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/goma-de-borrar.png</normaloff>icons/goma-de-borrar.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+M</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>664</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>txtDni</tabstop>
+  <tabstop>txtNombre</tabstop>
+  <tabstop>txtDirec</tabstop>
+  <tabstop>txtPobla</tabstop>
+  <tabstop>txtCp</tabstop>
+  <tabstop>cbProvincia</tabstop>
+  <tabstop>txtTlf</tabstop>
+  <tabstop>txtMail</tabstop>
+  <tabstop>txtObser</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../GUI/resources/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

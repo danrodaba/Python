@@ -19,13 +19,14 @@ class Formulario1(QMainWindow):
 
 
     def click_btnEliminar(self):
-        sentencia_SQL = 'delete from cliente where DNI = "' + self.DNI_NIE.text() + '";'
-        if self.DNI_NIE.text() == '':
-            sentencia_SQL = 'delete from cliente where DNI = null'
-        self.miBD.conectar()
-        self.miBD.ejecuta_comando_SQL(sentencia_SQL)
-        self.miBD.desconectar()
 
+        vSql = "DELETE FROM cliente  "
+        vSql = vSql + "WHERE dni = '" + self.DNI_NIE.text() + "'"
+        
+        self.miBD.conectar()
+        self.miBD.ejecuta_comando_SQL(vSql)
+        self.miBD.desconectar()
+        
     def click_btnCancelar(self):
         self.close()  # cierra la ventana (luego añadiremos una ventana de confirmación)
     
@@ -37,7 +38,6 @@ class Formulario1(QMainWindow):
         self.telefono.clear()
         self.poblacion.clear()
         self.cp.clear()
-        self.CCAA_cbb.clear()
         self.email.clear()
         self.cbx_deudor.setChecked(False)
         self.cbx_credito.setChecked(False)
@@ -47,6 +47,14 @@ class Formulario1(QMainWindow):
 
         
     def click_aceptar(self):        # Al aceptar se imprimirán los resultados como una lista
+        
+        # primero vamos a crear una sentencia para saber si creamos o modificamos una entrada de la base de datos.
+        self.DNI = str(self.DNI_NIE.text())
+        self.SQL_busqueda = "select * from cliente where DNI = '" + self.DNI + "'"
+        self.miBD.conectar()
+        self.respuesta_SQL = self.miBD.consulta(self.SQL_busqueda)
+        self.miBD.desconectar()
+        #ahora rellenamos con los datos nuestra lista "datos"
         self.datos.append(self.DNI_NIE.text())
         self.datos.append(self.nombre.text())
         self.datos.append(self.apellidos.text())
@@ -73,24 +81,33 @@ class Formulario1(QMainWindow):
             if self.datos[i] == '':
                 self.datos[i] = 'null'
 
-        #ahora procedo a meterlo en la base de datos
-        sentencia_SQL = 'insert into cliente (dni, nombre, apellidos, direccion, comunidad_autonoma, provincia, poblacion, cp, telefono, email, sexo, fnac, observaciones, deudor, credito) values ('
-        sentencia_SQL += '"' + str(self.datos[0])
-        for i in self.datos[1:-2]:
-            sentencia_SQL +=  '" , "' + str(i)
-        sentencia_SQL += '"'
-        for i in self.datos[-2:len(self.datos)]:
-            sentencia_SQL +=  ', ' + str(i)
-        sentencia_SQL += ')'
-        sentencia_SQL=sentencia_SQL.replace('"null"', 'null')
-        if len(self.datos[0]) == 9:
-            self.miBD.conectar()
-            self.miBD.ejecuta_comando_SQL(sentencia_SQL)
-            self.miBD.desconectar()
-        else:
-            print('No has introducido un DNI válido (8 cifras + 1 letra).')
+        print(self.SQL_busqueda)
+        print(self.respuesta_SQL)
+        if self.respuesta_SQL == [] # si la respuesta está vacía, no existe la entrada y se crea nueva:
 
-        self.datos = []
+            #ahora procedo a meterlo en la base de datos
+
+            sentencia_SQL = 'insert into cliente (dni, nombre, apellidos, direccion, comunidad_autonoma, provincia, poblacion, cp, telefono, email, sexo, fnac, observaciones, deudor, credito) values ('
+            sentencia_SQL += '"' + str(self.datos[0])
+            for i in self.datos[1:-2]:
+                sentencia_SQL +=  '" , "' + str(i)
+            sentencia_SQL += '"'
+            for i in self.datos[-2:len(self.datos)]:
+                sentencia_SQL +=  ', ' + str(i)
+            sentencia_SQL += ')'
+            sentencia_SQL=sentencia_SQL.replace('"null"', 'null')
+            if len(self.datos[0]) == 9:
+                self.miBD.conectar()            # aquí tienes la conexión
+                self.miBD.ejecuta_comando_SQL(sentencia_SQL)
+                self.miBD.desconectar()         # aquí la desconexión
+            else:
+                print('No has introducido un DNI válido (8 cifras + 1 letra).')
+
+            self.datos = []
+        else:       # si la entrada no está vacía, el campo existe y solamente se va a actualizar.
+
+
+
 
 
 if __name__ == '__main__':

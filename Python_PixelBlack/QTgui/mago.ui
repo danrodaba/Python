@@ -2475,7 +2475,7 @@
      <x>0</x>
      <y>0</y>
      <width>1037</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -2491,6 +2491,7 @@
   <tabstop>afiliacion</tabstop>
   <tabstop>secta</tabstop>
   <tabstop>concepto</tabstop>
+  <tabstop>master_modo</tabstop>
   <tabstop>spinFuerza</tabstop>
   <tabstop>spinDestreza</tabstop>
   <tabstop>spinResistencia</tabstop>
@@ -2500,9 +2501,99 @@
   <tabstop>spinPercepcion</tabstop>
   <tabstop>spinInteligencia</tabstop>
   <tabstop>spinAstucia</tabstop>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>master_modo</tabstop>
+  <tabstop>spinAlerta</tabstop>
+  <tabstop>spinArte</tabstop>
+  <tabstop>spinAtletismo</tabstop>
+  <tabstop>spinCallejeo</tabstop>
+  <tabstop>spinConsciencia</tabstop>
+  <tabstop>spinExpresion</tabstop>
+  <tabstop>spinEmpatia</tabstop>
+  <tabstop>spinIntimidacion</tabstop>
+  <tabstop>spinLiderazgo</tabstop>
+  <tabstop>spinPelea</tabstop>
+  <tabstop>spinSubterfugio</tabstop>
+  <tabstop>spinArmasFuego</tabstop>
+  <tabstop>spinMarciales</tabstop>
+  <tabstop>spinArtesania</tabstop>
+  <tabstop>spinConducir</tabstop>
+  <tabstop>spinDocumentacion</tabstop>
+  <tabstop>spinEtiqueta</tabstop>
+  <tabstop>spinMeditacion</tabstop>
+  <tabstop>spinArmas</tabstop>
+  <tabstop>spinSigilo</tabstop>
+  <tabstop>spinSupervivencia</tabstop>
+  <tabstop>spinTecnologia</tabstop>
+  <tabstop>spinAcademicismo</tabstop>
+  <tabstop>spinCiencias</tabstop>
+  <tabstop>spinCosmologia</tabstop>
+  <tabstop>spinEnigmas</tabstop>
+  <tabstop>spinEsoterismo</tabstop>
+  <tabstop>spinInformatica</tabstop>
+  <tabstop>spinInvestigacion</tabstop>
+  <tabstop>spinLeyes</tabstop>
+  <tabstop>spinMedicina</tabstop>
+  <tabstop>spinOcultismo</tabstop>
+  <tabstop>spinPolitica</tabstop>
+  <tabstop>rdbtn_cardinal</tabstop>
+  <tabstop>spinCardinal</tabstop>
+  <tabstop>rdbtn_correspondencia</tabstop>
+  <tabstop>spinCorrespondencia</tabstop>
+  <tabstop>rdbtn_entropia</tabstop>
+  <tabstop>spinEntropia</tabstop>
+  <tabstop>rdbtn_espiritu</tabstop>
+  <tabstop>spinEspiritu</tabstop>
+  <tabstop>rdbtn_fuerzas</tabstop>
+  <tabstop>spinFuerzas</tabstop>
+  <tabstop>rdbtn_materia</tabstop>
+  <tabstop>spinMateria</tabstop>
+  <tabstop>rdbtn_mente</tabstop>
+  <tabstop>spinMente</tabstop>
+  <tabstop>rdbtn_tiempo</tabstop>
+  <tabstop>spinTiempo</tabstop>
+  <tabstop>rdbtn_vida</tabstop>
+  <tabstop>spinVida</tabstop>
+  <tabstop>spinArete</tabstop>
+  <tabstop>spinVoluntad</tabstop>
+  <tabstop>spinQuintaesencia</tabstop>
+  <tabstop>spinParadoja</tabstop>
+  <tabstop>Trasfondos</tabstop>
+  <tabstop>spinTrasfondo</tabstop>
+  <tabstop>Trasfondos_2</tabstop>
+  <tabstop>spinTrasfondo_2</tabstop>
+  <tabstop>Trasfondos_3</tabstop>
+  <tabstop>spinTrasfondo_3</tabstop>
+  <tabstop>Trasfondos_4</tabstop>
+  <tabstop>spinTrasfondo_4</tabstop>
+  <tabstop>Trasfondos_5</tabstop>
+  <tabstop>spinTrasfondo_5</tabstop>
+  <tabstop>Trasfondo_libre</tabstop>
+  <tabstop>spinTrasfondo_6</tabstop>
+  <tabstop>Meritos</tabstop>
+  <tabstop>spinMeritos</tabstop>
+  <tabstop>Meritos_2</tabstop>
+  <tabstop>spinMeritos_2</tabstop>
+  <tabstop>Meritos_3</tabstop>
+  <tabstop>spinMeritos_3</tabstop>
+  <tabstop>Meritos_4</tabstop>
+  <tabstop>spinMeritos_4</tabstop>
+  <tabstop>Meritos_5</tabstop>
+  <tabstop>spinMeritos_5</tabstop>
+  <tabstop>Merito_libre</tabstop>
+  <tabstop>spinMeritos_6</tabstop>
+  <tabstop>Defectos</tabstop>
+  <tabstop>spinDefectos</tabstop>
+  <tabstop>Defectos_2</tabstop>
+  <tabstop>spinDefectos_2</tabstop>
+  <tabstop>Defectos_3</tabstop>
+  <tabstop>spinDefectos_3</tabstop>
+  <tabstop>Defectos_4</tabstop>
+  <tabstop>spinDefectos_4</tabstop>
+  <tabstop>Defectos_5</tabstop>
+  <tabstop>spinDefectos_5</tabstop>
+  <tabstop>Defecto_libre</tabstop>
+  <tabstop>spinDefectos_6</tabstop>
   <tabstop>btn_crear</tabstop>
+  <tabstop>lineEdit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

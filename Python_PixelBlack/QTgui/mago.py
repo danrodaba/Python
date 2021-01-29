@@ -15,8 +15,10 @@ class FichaMago(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         uic.loadUi('mago.ui', self)
+
         self.btn_crear.clicked.connect(self.crear_ficha)
 
+        self.errores = []
         self.Trasfondos.addItems(self.trasfondos)
         self.Trasfondos_2.addItems(self.trasfondos)
         self.Trasfondos_3.addItems(self.trasfondos)
@@ -168,15 +170,16 @@ class FichaMago(QMainWindow):
         self.PG_Arete = 4 # max = 3
         self.PG_Voluntad = 1
         self.PG_Quintaesencia = 4
-        self.PG_Merito
-        self.PG_Defecto
+        #self.PG_Merito
+        #self.PG_Defecto
 
+    '''
     def is_list_empty(list):
         # returning boolean value of current list
         # empty list bool value is False
         # non-empty list boolea value is True
         return not bool(list)
-  
+    '''
 
     def datos_ficha(self):
         # Identificación
@@ -297,6 +300,11 @@ class FichaMago(QMainWindow):
             self.afin = self.Tesferas[7]
         elif self.rdbtn_vida.isChecked():
             self.afin = self.Tesferas[8]
+        else:
+            self.fallo = 'Selecciona una esfera afín.'
+            self.error = True
+            self.errores.append(self.fallo)
+            self.afin = '-'
         
         # ultimas características
         self.ARETE = self.spinArete.value()
@@ -306,17 +314,18 @@ class FichaMago(QMainWindow):
         self.caracteristicas = [self.ARETE, self.VOLUNTAD, self.QUINTAESENCIA, self.PARADOJA]
         self.Tcaracteristicas = ['Arete', 'Voluntad', 'Quintaesencia', 'Paradoja']
         self.dict_caracteristicas = dict(zip(self.Tcaracteristicas, self.caracteristicas))
+        if self.ARETE > 3:
+            self.fallo = 'El Areté no puede ser mayor de 3.'
+            self.error = True
+            self.errores.append(self.fallo)
 
         # Captamos la lista de meritos.
 
-        self.dict_trasfondos = {self.Trasfondos.currentText(): self.spinTrasfondo.value(), self.Trasfondos_2.currentText(): self.spinTrasfondo_2.value(), self.Trasfondos_3.currentText(): self.spinTrasfondo_3.value(), self.Trasfondos_4.currentText(): self.spinTrasfondo_4.value(), self.Trasfondos_5.currentText(): self.spinTrasfondo_5.value(), self.Trasfondo_libre.text(): self.spinTrasfondo_6.value()}
-        self.Ptrasfondos = sum(self.dict_trasfondos.values())
-
-
+        self.dict_trasfondos = {'Trasfondo' : self.Trasfondos.currentText(), 'Ptrasfondo': self.spinTrasfondo.value(), 'Trasfondo_2' : self.Trasfondos_2.currentText(), 'Ptrasfondo_2': self.spinTrasfondo_2.value(), 'Trasfondo_3' : self.Trasfondos_3.currentText(), 'Ptrasfondo_3': self.spinTrasfondo_3.value(), 'Trasfondo_4' : self.Trasfondos_4.currentText(), 'Ptrasfondo_4': self.spinTrasfondo_4.value(), 'Trasfondo_5' : self.Trasfondos_5.currentText(), 'Ptrasfondo_5': self.spinTrasfondo_5.value(), 'Trasfondo_6' : self.Trasfondo_libre.text(), 'Ptrasfondo_6': self.spinTrasfondo_6.value()}
+        self.dict_meritos = {'merito' : self.Meritos.currentText(), 'Pmerito': self.spinMeritos.value(), 'merito_2' : self.Meritos_2.currentText(), 'Pmerito_2': self.spinMeritos_2.value(), 'merito_3' : self.Meritos_3.currentText(), 'Pmerito_3': self.spinMeritos_3.value(), 'merito_4' : self.Meritos_4.currentText(), 'Pmerito_4': self.spinMeritos_4.value(), 'merito_5' : self.Meritos_5.currentText(), 'Pmerito_5': self.spinMeritos_5.value(), 'merito_6' : self.Merito_libre.text(), 'Pmerito_6': self.spinMeritos_6.value()}
+        self.dict_defectos = {'defecto' : self.Defectos.currentText(), 'Pdefecto': self.spinDefectos.value(), 'defecto_2' : self.Defectos_2.currentText(), 'Pdefecto_2': self.spinDefectos_2.value(), 'defecto_3' : self.Defectos_3.currentText(), 'Pdefecto_3': self.spinDefectos_3.value(), 'defecto_4' : self.Defectos_4.currentText(), 'Pdefecto_4': self.spinDefectos_4.value(), 'defecto_5' : self.Defectos_5.currentText(), 'Pdefecto_5': self.spinDefectos_5.value(), 'defecto_6' : self.Defecto_libre.text(), 'Pdefecto_6': self.spinDefectos_6.value()}
     def crear_ficha(self):
-    #if self.master_modo.isChecked() is False:
-        self.errores = []
-        #Ahora se agrupan en distintas listas y diccionarios
+        # Ahora se agrupan en distintas listas y diccionarios
         self.dict_identificacion = {'Nombre': self.NOMBRE, 'Jugador': self.JUGADOR, 'Crónica': self.CRONICA, 'Naturaleza': self.NATURALEZA, 'Conducta': self.CONDUCTA, 'Esencia': self.ESENCIA, 'Afiliación': self.AFILIACION, 'Secta': self.SECTA, 'Concepto': self.CONCEPTO}
         self.identificacion = [self.NOMBRE, self.JUGADOR, self.CRONICA, self.NATURALEZA, self.CONDUCTA, self.ESENCIA, self.AFILIACION, self.SECTA, self.CONCEPTO]
         self.fisicos = [self.FUERZA, self.DESTREZA, self.RESISTENCIA]
@@ -352,7 +361,7 @@ class FichaMago(QMainWindow):
             self.errores.append(self.fallo)
         # los declaro como diccionarios y listas.
         self.dict_talentos = {'Alerta': self.ALERTA, 'Arte': self.ARTE, 'Atletismo': self.ATLETISMO, 'Callejeo': self.CALLEJEO, 'Consciencia': self.CONSCIENCIA, 'Empatia': self.EMPATIA, 'Expresión': self.EXPRESION,  'Intimidacion': self.INTIMIDACION, 'Liderazgo': self.LIDERAZGO, 'Pelea': self.PELEA, 'Subterfugio': self.SUBTERFUGIO}
-        self.dict_tecnicas = {'Armas de fuego': self.AFUEGO, 'Artes Marciales': self.AMARCIALES, 'Artesania': self.ARTESANIA, 'Conducir': self.CONDUCIR, 'Documentación': self.DOCUMENTACION, 'Etiqueta': self.ETIQUETA, 'Meditacion': self.MEDITACION, 'Pelea con Armas': self.PARMAS, 'Sigilo': self.SIGILO, 'Supervivencia': self.SUPERVIVENCIA, 'Tecnologia': self.TECNOLOGIA}
+        self.dict_tecnicas = {'Armas_fuego': self.AFUEGO, 'Artes_Marciales': self.AMARCIALES, 'Artesania': self.ARTESANIA, 'Conducir': self.CONDUCIR, 'Documentación': self.DOCUMENTACION, 'Etiqueta': self.ETIQUETA, 'Meditacion': self.MEDITACION, 'Pelea_Armas': self.PARMAS, 'Sigilo': self.SIGILO, 'Supervivencia': self.SUPERVIVENCIA, 'Tecnologia': self.TECNOLOGIA}
         self.dict_conocimientos = {'Academicismo': self.ACADEMICISMO, 'Ciencias': self.CIENCIAS, 'Cosmologia': self.COSMOLOGIA, 'Enigmas': self.ENIGMAS, 'Esoterismo': self.ESOTERISMO, 'Informatica': self.INFORMATICA, 'Investigacion': self.INVESTIGACION, 'Leyes': self.LEYES, 'Medicina': self.MEDICINA, 'Ocultismo': self.OCULTISMO, 'Politica': self.POLITICA}
         self.talentos = [self.ALERTA, self.ARTE, self.ATLETISMO, self.CALLEJEO, self.CONSCIENCIA, self.EMPATIA, self.EXPRESION, self.INTIMIDACION, self.LIDERAZGO, self.PELEA, self.SUBTERFUGIO]
         self.tecnicas = [self.AFUEGO, self.AMARCIALES, self.ARTESANIA, self.CONDUCIR, self.DOCUMENTACION, self.ETIQUETA, self.MEDITACION, self.PARMAS, self.SIGILO, self.SUPERVIVENCIA, self.TECNOLOGIA]
@@ -382,15 +391,51 @@ class FichaMago(QMainWindow):
             self.fallo = 'Conocimientos y técnicas tienen asignada la misma cantidad de puntos. Corrige este error o activa el modo máster.'
             self.error = True
             self.errores.append(self.fallo)
-            
+        # Con todos los datos reunidos en los diferentes diccionarios, creamos un macro diccionario que usaremos para hacer la inyección
+        self.dict_final = {}
+        self.dict_final.update(self.dict_identificacion)
+        self.dict_final.update(self.dict_fisicos)
+        self.dict_final.update(self.dict_sociales)
+        self.dict_final.update(self.dict_mentales)
+        self.dict_final.update(self.dict_talentos)
+        self.dict_final.update(self.dict_tecnicas)
+        self.dict_final.update(self.dict_conocimientos)
+        self.dict_final.update({'Esfera_afin': self.afin})
+        self.dict_final.update(self.dict_esferas)
+        self.dict_final.update(self.dict_caracteristicas)
+        self.dict_final.update(self.dict_trasfondos)
+        self.dict_final.update(self.dict_meritos)
+        self.dict_final.update(self.dict_defectos)
+
         # ahora vamos a comprobar si hay errores y en función de ello, dar un mensaje o inyectar a la base de datos
-        if self.error is True:
-            self.QDialog.warning(self.error)
-            self.setFixedSize(400, 200)
+        if self.errores != [] and self.master_modo.isChecked() == False:
+            self.errores_text = ''
+            mensaje = QMessageBox()
+            mensaje.setIcon(QMessageBox.Critical)
+            for i in self.errores:
+                self.errores_text += '-' + i + '\n'
+            mensaje.setText(self.errores_text)
+            mensaje.setWindowTitle("Errores")
+            mensaje.setStandardButtons(QMessageBox.Ok)
+            retval = mensaje.exec_()
+        
+        # Ahora, si todo está correcto, pasamos a usar los puntos gratuitos.
+        elif self.errores == [] or self.master_modo.isChecked() == True:
+
+            SQL_inyeccion = 'insert into fichas ('
 
 
 
-app = QApplication(sys.argv)
-miVentana = FichaMago()
-miVentana.show()
-app.exec_()
+
+            
+
+if __name__=="__main__":
+    #Instancia para iniciar una aplicación    
+    app = QApplication(sys.argv)
+    #Crear un objeto de la clase
+    VentanaMago = FichaMago()
+    #Mostrar la ventana
+    VentanaMago.show()
+    #Ejecutar la aplicación
+    app.exec_()
+    #Estas últias 4 sentencias, lanzan la aplicación. El if evita que se abra en caso de que no sea la principal.

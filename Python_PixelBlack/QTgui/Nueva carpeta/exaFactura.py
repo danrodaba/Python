@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 from formulario import Formulario
 
 #Clase heredada de QMainWindow (Constructor de Ventanas)
-class ExaFactura(QMainWindow): 
+class ExaFactura(QMainWindow):
    
     def __init__(self):
         super().__init__()

@@ -1,4 +1,3 @@
-create database fichas_mdt;
 use fichas_mdt;
 create table mago (
 Nombre varchar(50) primary key,
@@ -10,6 +9,7 @@ Esencia varchar(30),
 Afiliación varchar(30),
 Secta varchar(30),
 Concepto varchar(30),
+Esfera_afin varchar(15),
 Fuerza int, 
 Destreza int,
 Resistencia int,
@@ -52,7 +52,6 @@ Leyes int,
 Medicina int,
 Ocultismo int,
 Politica int,
-Esfera_afin varchar(15),
 Correspondencia int,
 Entropia int,
 Espiritu int,

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1037</width>
-    <height>813</height>
+    <width>1030</width>
+    <height>811</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -549,12 +549,12 @@
      <rect>
       <x>40</x>
       <y>710</y>
-      <width>93</width>
+      <width>101</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Crear ficha</string>
+     <string>Puntos Gratuitos</string>
     </property>
     <property name="shortcut">
      <string>Return</string>
@@ -2468,14 +2468,27 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="label_75">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>50</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1037</width>
-     <height>26</height>
+     <width>1030</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

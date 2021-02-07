@@ -170,6 +170,11 @@ class FichaMago(QMainWindow):
         self.spinDefectos_6.valueChanged.connect(self.datos_ficha)
 
         self.master_modo.stateChanged.connect(self.datos_ficha)
+        try:
+            self.gratuitos2 = self.gratuitos - self.PG_Atributo * self.incrementos[0] - self.PG_Habilidad * self.incrementos[1] - self.PG_Trasfondo * self.incrementos[2] - self.PG_Esfera * self.incrementos[3] - self.PG_Arete * self.incrementos[4] - self.PG_Voluntad * self.incrementos[5] - self.PG_Quintaesencia * self.incrementos[6] - self.incrementos[7] + self.incrementos[8]
+            self.label_75.setText(str(self.gratuitos2))
+        except:
+            self.label_75.setText(str(self.gratuitos))
 
     def calculo_gratuitos(datos_entrada):
         # los puntos gratuítos que tengamos serán:
@@ -201,8 +206,6 @@ class FichaMago(QMainWindow):
         elif self.master_modo.isChecked() is False:
             self.btn_crear.setText('Puntos Gratuitos')
 
-        print(self.fasegratuitos)
-        self.label_75.setText(str(self.gratuitos))
         # Identificación
         self.NOMBRE = self.nombre.text()
         self.JUGADOR = self.jugador.text()
@@ -337,6 +340,8 @@ class FichaMago(QMainWindow):
                 self.errores.append(self.fallo)
             self.afin = '-'
         
+        # self.label_75.setText(str(self.gratuitos))
+        
         # ultimas características
         self.ARETE = self.spinArete.value()
         self.VOLUNTAD = self.spinVoluntad.value()
@@ -359,6 +364,7 @@ class FichaMago(QMainWindow):
         self.Pdefectos = [self.spinDefectos.value(), self.spinDefectos_2.value(), self.spinDefectos_3.value(), self.spinDefectos_4.value(), self.spinDefectos_5.value(), self.spinDefectos_6.value(), ]
         self.Ptrasfondos = [self.spinTrasfondo.value(), self.spinTrasfondo_2.value(), self.spinTrasfondo_3.value(), self.spinTrasfondo_4.value(), self.spinTrasfondo_5.value(), self.spinTrasfondo_6.value()]
 
+    
     def crear_ficha(self):
         # Ahora se agrupan en distintas listas y diccionarios
         self.dict_identificacion = {'Nombre': self.NOMBRE, 'Jugador': self.JUGADOR, 'Crónica': self.CRONICA, 'Naturaleza': self.NATURALEZA, 'Conducta': self.CONDUCTA, 'Esencia': self.ESENCIA, 'Afiliación': self.AFILIACION, 'Secta': self.SECTA, 'Concepto': self.CONCEPTO}
@@ -429,13 +435,13 @@ class FichaMago(QMainWindow):
         # Con todos los datos reunidos en los diferentes diccionarios, creamos un macro diccionario que usaremos para hacer la inyección
         self.dict_final = {}
         self.dict_final.update(self.dict_identificacion)
+        self.dict_final.update({'Esfera_afin': self.afin})
         self.dict_final.update(self.dict_fisicos)
         self.dict_final.update(self.dict_sociales)
         self.dict_final.update(self.dict_mentales)
         self.dict_final.update(self.dict_talentos)
         self.dict_final.update(self.dict_tecnicas)
         self.dict_final.update(self.dict_conocimientos)
-        self.dict_final.update({'Esfera_afin': self.afin})
         self.dict_final.update(self.dict_esferas)
         self.dict_final.update(self.dict_caracteristicas)
         self.dict_final.update(self.dict_trasfondos)
@@ -443,26 +449,52 @@ class FichaMago(QMainWindow):
         self.dict_final.update(self.dict_defectos)
 
         # ahora vamos a comprobar si hay errores y en función de ello, dar un mensaje o inyectar a la base de datos
-        if self.errores != [] and self.master_modo.isChecked() is False:
-            self.errores_text = ''
-            mensaje = QMessageBox()
-            mensaje.setIcon(QMessageBox.Critical)
-            for i in self.errores:
-                self.errores_text += '-' + i + '\n'
-            mensaje.setText(self.errores_text)
-            mensaje.setWindowTitle("Errores")
-            mensaje.setStandardButtons(QMessageBox.Ok)
-            retval = mensaje.exec_()
+        if self.fasegratuitos == 0: # para saber si ya estamos en la fase de puntos gratuítos. Si es así, se saltarán estos mensajes y se hará uno nuevo
+            if self.errores != [] and self.master_modo.isChecked() is False:
+                self.errores_text = ''
+                mensaje = QMessageBox()
+                mensaje.setIcon(QMessageBox.Critical)
+                for i in self.errores:
+                    self.errores_text += '-' + i + '\n'
+                mensaje.setText(self.errores_text)
+                mensaje.setWindowTitle("Errores")
+                mensaje.setStandardButtons(QMessageBox.Ok)
+                retval = mensaje.exec_()
         
-        # Ahora, si todo está correcto, pasamos a usar los puntos gratuitos.
-        elif self.errores == [] and self.master_modo.isChecked() is False:
-            self.fasegratuitos = 1
-            # comprobamos los puntos actuales a cada categoría para saber en donde los hemos subido.
-            # los puntos actuales son: 0 atributos, 1 habilidades, 2 trasfondos, 3 esferas, 4 areté, 5 voluntad y 6 quintaesencia.
-            self.Pprevios = [sum(self.fisicos) + sum(self.sociales) + sum(self.mentales), sum(self.talentos) + sum(self.tecnicas) + sum(self.conocimientos), self.Ptrasfondos, sum(self.esferas), self.VOLUNTAD, self.QUINTAESENCIA ]
-            self.btn_crear.setText('Crear Ficha')
+            # Ahora, si todo está correcto, pasamos a usar los puntos gratuitos.
+            elif self.errores == [] and self.master_modo.isChecked() is False:
+                self.fasegratuitos = 1
+                # comprobamos los puntos actuales a cada categoría para saber en donde los hemos subido.
+                # los puntos actuales son: 0 atributos, 1 habilidades, 2 trasfondos, 3 esferas, 4 areté, 5 voluntad y 6 quintaesencia.
+                self.datos_entrada = [sum(self.fisicos) + sum(self.sociales) + sum(self.mentales), sum(self.talentos) + sum(self.tecnicas) + sum(self.conocimientos), sum(self.Ptrasfondos), sum(self.esferas), self.ARETE, self.VOLUNTAD, self.QUINTAESENCIA, sum(self.Pmeritos), sum(self.Pdefectos)]
+                self.btn_crear.setText('Crear Ficha')
+                self.gratuitos -= sum(self.Pmeritos) + sum(self.Pdefectos)
+                # 0 atributos, 1 habilidades, 2 trasfondos, 3 esferas, 4 areté, 5 voluntad y 6 quintaesencia.
 
-        self.errores = []
+            
+
+            self.errores = []
+            # -----------
+            # los puntos gratuítos que tengamos serán:
+
+        # y se gastarán a razón de:
+        self.PG_Atributo = 5
+        self.PG_Habilidad = 2
+        self.PG_Trasfondo = 1
+        self.PG_Esfera = 7
+        self.PG_Arete = 4
+        self.PG_Voluntad = 1
+        self.PG_Quintaesencia = 4
+        self.Pfinal = [sum(self.fisicos) + sum(self.sociales) + sum(self.mentales), sum(self.talentos) + sum(self.tecnicas) + sum(self.conocimientos), sum(self.Ptrasfondos), sum(self.esferas), self.ARETE, self.VOLUNTAD, self.QUINTAESENCIA, sum(self.Pmeritos), sum(self.Pdefectos)]
+        self.incrementos = [self.Pfinal[0] - self.datos_entrada[0], self.Pfinal[1] - self.datos_entrada[1], self.Pfinal[2] - self.datos_entrada[2], self.Pfinal[3] - self.datos_entrada[3], self.Pfinal[4] - self.datos_entrada[4], self.Pfinal[5] - self.datos_entrada[5], self.Pfinal[6] - self.datos_entrada[6], self.Pfinal[7] - self.datos_entrada[7], self.Pfinal[8] - self.datos_entrada[8]]
+        
+        self.gratuitos2 = self.gratuitos - self.PG_Atributo * self.incrementos[0] - self.PG_Habilidad * self.incrementos[1] - self.PG_Trasfondo * self.incrementos[2] - self.PG_Esfera * self.incrementos[3] - self.PG_Arete * self.incrementos[4] - self.PG_Voluntad * self.incrementos[5] - self.PG_Quintaesencia * self.incrementos[6] - self.incrementos[7] + self.incrementos[8]
+        print(self.incrementos)
+        print(self.gratuitos2)
+
+        if self.gratuitos == 0:
+            print(self.incrementos)
+        
 
 
             
